@@ -29,10 +29,7 @@ namespace Student__Registration_Form
 
         private async void GreetStudent_Click(object sender, RoutedEventArgs e)
         {
-            if (!NameBox.Text.StartsWith("Hello "))
-            {
-                NameBox.Text = "Hello " + NameBox.Text;
-            }
+            
             ContentDialog dialog = new ContentDialog
             {
                 Title = "ISBAT FORM",
@@ -45,7 +42,7 @@ namespace Student__Registration_Form
 
         private async void ShowCourse_Click(object sender, RoutedEventArgs e)
         {
-            CourseBox.Text = "Course: " + CourseBox.Text;
+            
             ContentDialog dialog = new ContentDialog
             {
                 Title = "ISBAT FORM",
@@ -57,13 +54,12 @@ namespace Student__Registration_Form
 
         private async void ShowContacts_Click(object sender, RoutedEventArgs e)
         {
-            EmailBox.Text = "Email: " + EmailBox.Text;
-            PhoneBox.Text = "Phone: " + PhoneBox.Text;
+            
 
             ContentDialog dialog = new ContentDialog
             {
                 Title = "ISBAT FORM",
-                Content = "Contact information displayed successfully",
+                Content = "Contact details updated!",
                 CloseButtonText = "OKAY"
             };
             await dialog.ShowAsync();
@@ -71,16 +67,11 @@ namespace Student__Registration_Form
 
         private async void ConfirmRegistration_Click(object sender, RoutedEventArgs e)
         {
-            string message = "Registration Confirmed for " + NameBox.Text +
-                             "\nID: " + IdBox.Text +
-                             "\nCourse: " + CourseBox.Text +
-                             "\nEmail: " + EmailBox.Text +
-                             "\nPhone: " + PhoneBox.Text;
 
             ContentDialog dialog = new ContentDialog
             {
                 Title = "ISBAT FORM",
-                Content = message,
+                Content = "Registration Confirmed for " +NameBox.Text +" in Course  " +CourseBox.Text,
                 CloseButtonText = "OKAY"
             };
             await dialog.ShowAsync();
